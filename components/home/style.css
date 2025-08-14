@@ -1,0 +1,43 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.welcome-card {
+    background: var(--background-white);
+    border: 3px solid var(--padres-gold);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.welcome-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.welcome-card h2 {
+    color: var(--padres-brown);
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.welcome-card p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Logo de los Padres */
+.padres-logo {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 48px;
+    color: var(--padres-gold);
+    text-shadow: 2px 2px 4px rgba(47, 36, 29, 0.3);
+}

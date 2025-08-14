@@ -1,0 +1,88 @@
+<link href="components/dashboard/style.css" rel="stylesheet">
+<div class="h1"><h1>Dashboard</h1></div>
+<br>
+<div class="kpi">
+    <div class="kpi-top">
+        <div class="kpi-icon">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="kpi-value">
+            <label id="label-active-sessions">999</label>
+        </div>
+    </div>
+    <div class="kpi-bottom">
+        <label>Active Agents</label>
+    </div>
+</div>
+
+<div class="kpi">
+    <div class="kpi-top">
+        <div class="kpi-icon">
+            <i class="fas fa-phone-volume"></i>
+        </div>
+        <div class="kpi-value">
+            <label id="label-active-calls">999</label>
+        </div>
+    </div>
+    <div class="kpi-bottom">
+        <label>Active Calls</label>
+    </div>
+</div>
+
+<div class="kpi">
+    <div class="kpi-top">
+        <div class="kpi-icon">
+            <i class="fas fa-phone"></i>
+        </div>
+        <div class="kpi-value">
+            <label id="label-total-calls">999</label>
+        </div>
+    </div>
+    <div class="kpi-bottom">
+        <label>Total Calls</label>
+    </div>
+</div>
+
+<div class="kpi" id="div-avg-handle">
+    <div class="kpi-top">
+        <div class="kpi-icon" id="icon-avg-handle">
+            <i class="fas fa-clock"></i>
+        </div>
+        <div class="kpi-value" id="value-avg-handle">
+            <label id="label-avg-handle-time">7:30</label>
+        </div>
+    </div>
+    <div class="kpi-bottom" id="div-avg-handle-bottom">
+        <label>Average Handle Time</label>
+    </div>
+</div>
+
+<div class="kpi" id="div-wait-time">
+    <div class="kpi-top">
+        <div class="kpi-icon" id="icon-wait-time">
+            <i class="fas fa-clock"></i>
+        </div>
+        <div class="kpi-value" id="value-wait-time">
+            <label id="label-wait-time">5:05</label>
+        </div>
+    </div>
+    <div class="kpi-bottom" id="div-wait-time-bottom">
+        <label>Wait Time</label>
+    </div>
+</div>
+
+<div class="kpi" id="div-calls-in-queue">
+    <div class="kpi-top">
+        <div id="icon-calls-in-call" class="kpi-icon">
+            <i class="fas fa-users"></i>
+        </div>
+        <div id="value-calls-in-call" class="kpi-value">
+            <label id="label-calls-in-queue">999</label>
+        </div>
+    </div>
+    <div class="kpi-bottom" id="div-calls-in-queue-bottom">
+        <label>Calls on Queue</label>
+    </div>
+</div>
+<div id="chart-duration" style="position: relative; float:left; width: 47.6%; height:400px; margin:4px;"></div>
+<div id="chart-hour" style="position: relative; float:left; width: 47.7%; height:400px; margin:4px;"></div>

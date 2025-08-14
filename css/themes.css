@@ -1,0 +1,86 @@
+:root {
+    --padres-brown: #2F241D;
+    --padres-gold: #FFC425;
+    --padres-light-brown: #4A3B30;
+    --padres-dark-gold: #E6B000;
+    --background-light: #FAF8F5;
+    --background-white: #FFFFFF;
+    --text-dark: #2F241D;
+    --text-light: #6B5D54;
+    --border-light: #E8DDD5;
+    --shadow: 0 2px 8px rgba(47, 36, 29, 0.1);
+    --shadow-hover: 0 4px 12px rgba(47, 36, 29, 0.15);
+    --radius: 8px;
+    --extreme: #9f0e0e;
+    --extremeDark: #710d0d;
+    --highDark: #8B0000;
+    --high: #DC143C;
+    --midDark: #DAA520;
+    --mid: #FFD700;
+     --low: #9abe14;
+    --lowDark: #6b9c0d;
+    --goodDark: #089c08;
+    --good: #32CD32;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.h1 {
+    margin: 20px;
+    color: var(--padres-brown);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.h1 h1 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.icon {
+    font-size: 18px;
+    width: 32px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.icon-clickable {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius);
+}
+
+.icon-clickable:hover {
+    background-color: rgba(255,196,37,0.2);
+    transform: scale(1.1);
+}
+
+.icon-light {
+    color: var(--padres-gold);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--padres-light-brown);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--padres-brown);
+}

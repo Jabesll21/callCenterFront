@@ -1,0 +1,86 @@
+:root {
+    --line: #546E7A;
+    --fill: #37474F;
+    --inuse: #2E7D32;
+    /*status*/
+    --good: #4CAF50;
+    --goodDark: #369439;
+    --low: #CDDC39;
+    --lowDark: #859216;
+    --mid: #FFEB3B;
+    --midDark: #b2a31c;
+    --high: #FF9800;
+    --highDark: #cb7b02;
+    --extreme: #F44336;
+    --extremeDark: #d03328;
+}
+.svg {
+    position: relative;
+    float: left;
+    width: calc(100% - 20px);
+    height: calc(100vh - 112px);
+    margin: 10px;
+}
+.svg svg {
+    width: 100%;
+    height: 100%;
+}
+.line {
+    stroke-width: 1px; 
+    stroke: var(--line);
+}
+.object {
+    fill: var(--fill);
+    stroke: var(--line);
+}
+
+
+.desk {
+    fill: #37474F;
+}
+.desk-in-use {
+    fill: var(--inuse);
+}
+.chair-dark {
+    fill:#546E7A; 
+}
+.chair-light {
+    fill: #37474F;  
+}
+.cubicule {
+    fill:   #546E7A;  
+}
+.red {
+    fill:red;
+}
+.ws-id {
+    fill: #546E7A;
+    font-size: 20pt;
+    text-anchor: middle;   
+}
+.call-icon {
+    fill: #546E7A;
+    stroke: #CFD8DC;
+    stroke-width: 2px;
+}
+.call-icon-text {
+    text-anchor: middle;
+    font-size: 8pt;
+    fill: #CFD8DC;
+}
+
+.good {
+    fill: var(--goodDark);
+}
+.low {
+    fill: var(--lowDark);
+}
+.mid {
+    fill: var(--midDark);
+}
+.high {
+    fill: var(--highDark);
+}
+.extreme {
+    fill: var(--extremeDark);
+}
