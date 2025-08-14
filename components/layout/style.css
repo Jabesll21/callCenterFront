@@ -1,86 +1,367 @@
 :root {
-    --line: #546E7A;
-    --fill: #37474F;
-    --inuse: #2E7D32;
-    /*status*/
-    --good: #4CAF50;
-    --goodDark: #369439;
-    --low: #CDDC39;
-    --lowDark: #859216;
-    --mid: #FFEB3B;
-    --midDark: #b2a31c;
-    --high: #FF9800;
-    --highDark: #cb7b02;
-    --extreme: #F44336;
-    --extremeDark: #d03328;
+    /* Colores base */
+    --line: #718096;
+    --fill: #4A5568;
+    --inuse: #38A169;
+    
+    /* Estados de tiempo - colores más sutiles y bonitos */
+    --good: #48BB78;           /* Verde suave - 0-1 minutos */
+    --goodDark: #38A169;
+    --low: #ECC94B;            /* Amarillo suave - 1-3 minutos */
+    --lowDark: #D69E2E;
+    --mid: #ED8936;            /* Naranja suave - 3-5 minutos */
+    --midDark: #DD6B20;
+    --high: #F56565;           /* Rojo suave - 5-10 minutos */
+    --highDark: #E53E3E;
+    --extreme: #C53030;        /* Rojo oscuro - +10 minutos */
+    --extremeDark: #9C1A1A;
+    
+    /* Estados de agentes */
+    --available: #68D391;      /* Verde claro - disponible */
+    --available-dark: #48BB78;
+    --active-call: #4299E1;    /* Azul - en llamada */
+    --active-call-dark: #3182CE;
+    --empty-station: #9CA3AF;  /* Gris - estación vacía */
+    --empty-station-dark: #6B7280;
+    
+    /* Colores del tema Padres */
+    --padres-brown: #2F241D;
+    --padres-gold: #FFC425;
+    --padres-light-brown: #4A3B30;
 }
+
 .svg {
     position: relative;
     float: left;
     width: calc(100% - 20px);
-    height: calc(100vh - 112px);
+    height: calc(100vh - 120px);
     margin: 10px;
+    background: linear-gradient(135deg, #FAF8F5 0%, #F7FAFC 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(47, 36, 29, 0.12);
+    overflow: hidden;
 }
+
 .svg svg {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
+
 .line {
     stroke-width: 1px; 
     stroke: var(--line);
 }
+
 .object {
     fill: var(--fill);
     stroke: var(--line);
 }
 
-
+/* Escritorios mejorados - sin animación flotante */
 .desk {
-    fill: #37474F;
+    fill: #4A5568;
+    stroke: var(--padres-gold);
+    stroke-width: 2px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    transition: all 0.3s ease;
 }
+
+.desk:hover {
+    stroke-width: 3px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    fill: #5A6578;
+}
+
 .desk-in-use {
     fill: var(--inuse);
 }
-.chair-dark {
-    fill:#546E7A; 
-}
-.chair-light {
-    fill: #37474F;  
-}
+
+/* Cubículos con mejor diseño */
 .cubicule {
-    fill:   #546E7A;  
-}
-.red {
-    fill:red;
-}
-.ws-id {
-    fill: #546E7A;
-    font-size: 20pt;
-    text-anchor: middle;   
-}
-.call-icon {
-    fill: #546E7A;
-    stroke: #CFD8DC;
-    stroke-width: 2px;
-}
-.call-icon-text {
-    text-anchor: middle;
-    font-size: 8pt;
-    fill: #CFD8DC;
+    fill: #718096;
+    stroke: var(--padres-light-brown);
+    stroke-width: 1px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
 }
 
-.good {
-    fill: var(--goodDark);
+/* Sillas mejoradas */
+.chair-dark {
+    fill: #4A5568;
+    stroke: #2D3748;
+    stroke-width: 1px;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+    transition: all 0.3s ease;
 }
-.low {
-    fill: var(--lowDark);
+
+.chair-light {
+    fill: #E2E8F0;
+    stroke: #CBD5E0;
+    stroke-width: 1px;
+    transition: all 0.3s ease;
 }
-.mid {
-    fill: var(--midDark);
+
+/* Efectos hover para las sillas */
+.chair-dark:hover {
+    fill: #5A6578;
 }
-.high {
-    fill: var(--highDark);
+
+.chair-light:hover {
+    fill: #F7FAFC;
 }
-.extreme {
-    fill: var(--extremeDark);
+
+/* Números de estación más elegantes - sin hover molesto */
+.ws-id {
+    fill: var(--padres-gold);
+    font-size: 18pt;
+    font-weight: bold;
+    text-anchor: middle;
+    font-family: 'Arial', sans-serif;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/* Iconos de agentes mejorados */
+.agent-icon {
+    stroke: #FFFFFF;
+    stroke-width: 3px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.16));
+}
+
+.agent-icon.available {
+    fill: var(--available);
+    animation: pulse-available 3s ease-in-out infinite;
+}
+
+.agent-icon.active-call {
+    fill: var(--active-call);
+    animation: pulse-active 1.5s ease-in-out infinite;
+}
+
+.agent-icon.empty-station {
+    fill: var(--empty-station);
+    animation: pulse-empty 3s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+/* Animaciones más suaves */
+@keyframes pulse-available {
+    0%, 100% { 
+        fill: var(--available);
+        stroke-width: 3px;
+    }
+    50% { 
+        fill: var(--available-dark);
+        stroke-width: 4px;
+    }
+}
+
+@keyframes pulse-active {
+    0%, 100% { 
+        fill: var(--active-call);
+        stroke-width: 3px;
+    }
+    50% { 
+        fill: var(--active-call-dark);
+        stroke-width: 5px;
+    }
+}
+
+@keyframes pulse-empty {
+    0%, 100% { 
+        fill: var(--empty-station);
+        opacity: 0.7;
+    }
+    50% { 
+        fill: var(--empty-station-dark);
+        opacity: 0.5;
+    }
+}
+
+/* Contadores de tiempo con colores actualizados */
+.call-icon {
+    stroke: #FFFFFF;
+    stroke-width: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.call-icon-text {
+    text-anchor: middle;
+    font-size: 11pt;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    fill: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    transition: all 0.3s ease;
+}
+
+/* Estados de tiempo actualizados con animaciones dinámicas */
+.call-icon.good {
+    fill: var(--good);
+    animation: glow-good 2s ease-in-out infinite alternate;
+}
+
+.call-icon.low {
+    fill: var(--low);
+    animation: glow-low 1.8s ease-in-out infinite alternate;
+}
+
+.call-icon.mid {
+    fill: var(--mid);
+    animation: glow-mid 1.5s ease-in-out infinite alternate;
+}
+
+.call-icon.high {
+    fill: var(--high);
+    animation: glow-high 1.2s ease-in-out infinite alternate;
+}
+
+.call-icon.extreme {
+    fill: var(--extreme);
+    animation: glow-extreme 0.8s ease-in-out infinite alternate;
+}
+
+/* Animaciones de brillo por estado - menos invasivas */
+@keyframes glow-good {
+    from { 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 8px rgba(72, 187, 120, 0.6)); 
+    }
+}
+
+@keyframes glow-low {
+    from { 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 8px rgba(236, 201, 75, 0.6)); 
+    }
+}
+
+@keyframes glow-mid {
+    from { 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 10px rgba(237, 137, 54, 0.7)); 
+    }
+}
+
+@keyframes glow-high {
+    from { 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 12px rgba(245, 101, 101, 0.8)); 
+    }
+}
+
+@keyframes glow-extreme {
+    from { 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 15px rgba(197, 48, 48, 0.9)); 
+    }
+}
+
+/* Icono por defecto mejorado */
+.agent-default-icon {
+    fill: #FFFFFF;
+    font-size: 16px;
+    text-anchor: middle;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+/* Texto para estaciones vacías */
+.empty-station-text {
+    fill: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    text-anchor: middle;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Efectos hover mejorados - sin animaciones molestas */
+.agent-icon:hover {
+    stroke-width: 4px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)) brightness(1.1);
+}
+
+.call-icon:hover {
+    stroke-width: 3px;
+}
+
+/* Título mejorado */
+.h1 h1 {
+    background: linear-gradient(45deg, var(--padres-brown), var(--padres-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 28px;
+    margin: 0;
+}
+
+/* Efectos especiales para hacer más dinámico - removidos */
+/* Animación flotante removida */
+
+/* Animación sutil para los escritorios - removida */
+
+/* Responsive design */
+@media (max-width: 1400px) {
+    .svg {
+        height: calc(100vh - 100px);
+    }
+    
+    .ws-id {
+        font-size: 16pt;
+    }
+    
+    .call-icon-text {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 1024px) {
+    .agent-icon {
+        stroke-width: 2px;
+    }
+    
+    .call-icon {
+        stroke-width: 1px;
+    }
+    
+    .call-icon-text {
+        font-size: 9pt;
+    }
+    
+    .ws-id {
+        font-size: 14pt;
+    }
+}
+
+@media (max-width: 768px) {
+    .svg {
+        margin: 5px;
+        width: calc(100% - 10px);
+    }
+    
+    .h1 h1 {
+        font-size: 24px;
+    }
+}
+
+/* Indicadores de estado adicionales */
+.status-indicator {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.status-indicator:hover {
+    opacity: 1;
 }
